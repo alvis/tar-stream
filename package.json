@@ -16,13 +16,15 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
+    "@types/node": "^8.0.26",
     "concat-stream": "^1.6.2",
     "standard": "^11.0.1",
-    "tape": "^4.9.0"
+    "tape": "^4.9.0",
+    "typescript": "^3.1.6"
   },
   "scripts": {
-    "test": "standard && tape test/extract.js test/pack.js",
-    "test-all": "standard && tape test/*.js"
+    "test": "standard && tsc --noEmit --allowJs --checkJs && tape test/extract.js test/pack.js",
+    "test-all": "standard && tsc --noEmit --allowJs --checkJs && tape test/*.js"
   },
   "keywords": [
     "tar",
@@ -45,6 +47,7 @@
   },
   "homepage": "https://github.com/mafintosh/tar-stream",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "*.js",
     "LICENSE"
